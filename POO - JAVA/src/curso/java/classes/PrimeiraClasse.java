@@ -28,12 +28,14 @@ public class PrimeiraClasse {
 		aluno1.setNota3(70.9);
 		aluno1.setNota4(90.7);
 		
+		
 		System.out.println("Nome é = " + aluno1.getNome());
 		System.out.println("Idade é = " + aluno1.getIdade());
 		System.out.println("A data de Nascimento é = " + aluno1.getDataNascimento());
 		System.out.println("A escola é = " + aluno1.getNomeEscola());
 		System.out.println("Média de nota do aluno " + aluno1.getNome() + " é : " + aluno1.getMediaNota());
-		
+		System.out.println("O Resultado é = " + (aluno1.getAlunoAprovado() ? " Aluno Aprovado" : "Aluno Reprovado"));
+		System.out.println("Resultado 2 = " + aluno1.getAlunoAprovado2());
 		/*=====================================================*/
 		
 		System.out.println("------------------------------------------------------");
@@ -49,6 +51,7 @@ public class PrimeiraClasse {
 		aluno2.setDataMatricula("10/02/2021");
 		aluno2.setSerieMatriculado("6");
 		aluno2.setNomeEscola("JDEV Treinamento");
+	
 		
 		System.out.println("Nome é do aluno 2 = " + aluno2.getNome());
 		System.out.println("Idade do " + aluno2.getNome() + " é : "+ aluno2.getIdade());
