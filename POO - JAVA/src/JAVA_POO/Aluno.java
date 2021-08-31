@@ -1,5 +1,6 @@
 package JAVA_POO;
 
+import java.util.Objects;
 
 /*Está é nossa classe/objeto que representa o Aluno*/
 public class Aluno {
@@ -178,6 +179,23 @@ public class Aluno {
 				+ ", dataMatricula=" + dataMatricula + ", nomeEscola=" + nomeEscola + ", serieMatriculado="
 				+ serieMatriculado + ", nota1=" + nota1 + ", nota2=" + nota2 + ", nota3=" + nota3 + ", nota4=" + nota4
 				+ "]";
+	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(nome, numeroCpf);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Aluno other = (Aluno) obj;
+		return Objects.equals(nome, other.nome) && Objects.equals(numeroCpf, other.numeroCpf);
 	}
 	
 }
