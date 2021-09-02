@@ -3,6 +3,7 @@ package curso.java.classes;
 import javax.swing.JOptionPane;
 
 import JAVA_POO.Aluno;
+import JAVA_POO.Disciplina;
 
 public class PrimeiraClasse {
 	
@@ -24,17 +25,6 @@ public class PrimeiraClasse {
 		String serie = JOptionPane.showInputDialog("Qual a série do aluno?");
 		String escola = JOptionPane.showInputDialog("Qual o nome da escola?");
 		
-		String disciplina1 = JOptionPane.showInputDialog("Disciplina 1 ?");
-		String nota1 = JOptionPane.showInputDialog("Qual a nota1 ?");
-		
-		String disciplina2 = JOptionPane.showInputDialog("Disciplina 2 ?");
-		String nota2 = JOptionPane.showInputDialog("Qual a nota2 ?");
-		
-		String disciplina3 = JOptionPane.showInputDialog("Disciplina 3 ?");
-		String nota3 = JOptionPane.showInputDialog("Qual a nota3 ?");
-		
-		String disciplina4 = JOptionPane.showInputDialog("Disciplina 4 ?");
-		String nota4 = JOptionPane.showInputDialog("Qual a nota4 ?");
 		
 		Aluno aluno1 = new Aluno();/*Aqui será o João*/
 
@@ -49,30 +39,32 @@ public class PrimeiraClasse {
 		aluno1.setSerieMatriculado(serie);
 		aluno1.setNomeEscola(escola);
 		
-		aluno1.getDisciplina().setNota1(Double.parseDouble(nota1));
-		aluno1.getDisciplina().setNota2(Double.parseDouble(nota2));
-		aluno1.getDisciplina().setNota3(Double.parseDouble(nota3));
-		aluno1.getDisciplina().setNota4(Double.parseDouble(nota4));
+		Disciplina disciplina1 = new Disciplina();
+		disciplina1.setDisciplina("Banco de dados");
+		disciplina1.setNota(90);
 		
-		aluno1.getDisciplina().setDisciplina2(disciplina1);
-		aluno1.getDisciplina().setDisciplina2(disciplina2);
-		aluno1.getDisciplina().setDisciplina3(disciplina3);
-		aluno1.getDisciplina().setDisciplina4(disciplina4);
+		Disciplina disciplina2 = new Disciplina();
+		disciplina2.setDisciplina("Matematica");
+		disciplina2.setNota(80);
 		
+		Disciplina disciplina3 = new Disciplina();
+		disciplina3.setDisciplina("Geografia");
+		disciplina3.setNota(97);
+
+		Disciplina disciplina4 = new Disciplina();
+		disciplina4.setDisciplina("Java Web");
+		disciplina4.setNota(97);
 		
-		System.out.println(aluno1.toString());/*Descrição do objeto na memória*/
+		aluno1.getDisciplinas().add(disciplina1);
+		aluno1.getDisciplinas().add(disciplina2);
+		aluno1.getDisciplinas().add(disciplina3);
+		aluno1.getDisciplinas().add(disciplina4);
+
 		
-		/*System.out.println("Média do aluno = " + aluno1.getMediaNota());
-		System.out.println("Resultado = " + aluno1.getAlunoAprovado2());*/
-		
-		System.out.println("Nome é = " + aluno1.getNome());
-		
-		System.out.println("Idade é = " + aluno1.getIdade());
-		System.out.println("A data de Nascimento é = " + aluno1.getDataNascimento());
-		System.out.println("A escola é = " + aluno1.getNomeEscola());
-		System.out.println("Média de nota do aluno " + aluno1.getNome() + " é : " + aluno1.getMediaNota());
-		System.out.println("O Resultado é = " + (aluno1.getAlunoAprovado() ? " Aluno Aprovado" : "Aluno Reprovado"));
-		System.out.println("Resultado 2 = " + aluno1.getAlunoAprovado2());
+		System.out.println("Nome é = " + aluno1);
+		System.out.println("Idade é = " + aluno1);
+		System.out.println("A média é = " + aluno1.getMediaNota());
+		System.out.println("Resultado = " + aluno1.getAlunoAprovado2());
 		
 		/*=====================================================*/
 		
