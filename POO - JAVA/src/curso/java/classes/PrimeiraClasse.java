@@ -81,16 +81,27 @@ public class PrimeiraClasse {
 			for (Aluno aluno : alunos ) {
 				
 				if (aluno.getNome().equalsIgnoreCase("Andre")) {
-				
+					alunos.remove(aluno);
+					break;
+				}else {
+					
 				System.out.println(aluno);
 				System.out.println(aluno.getDisciplinas());
 				System.out.println("A média é = " + aluno.getMediaNota());
 				System.out.println("Resultado = " + aluno.getAlunoAprovado2());
 				System.out.println("-----------------------------------------");
-				break;
+				
 			}
 		
 			}
+				for (Aluno aluno : alunos) {
+					System.out.println("Aluno que sobraram na lista");
+					System.out.println(aluno.getNome());
+					System.out.println("Sua materias são");
+					for (Disciplina disciplina : aluno.getDisciplinas()) {
+						System.out.println(disciplina.getDisciplina());
+					}
+				}
 		}
 	}
 
