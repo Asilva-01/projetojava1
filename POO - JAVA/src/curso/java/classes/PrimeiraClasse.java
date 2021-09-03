@@ -78,32 +78,29 @@ public class PrimeiraClasse {
 		}
 			alunos.add(aluno1);
 		}
-			for (Aluno aluno : alunos ) {
+			for (int pos = 0; pos < alunos.size(); pos ++) {
+				Aluno aluno = alunos.get(pos);
 				
-				if (aluno.getNome().equalsIgnoreCase("Andre")) {
-					alunos.remove(aluno);
-					break;
-				}else {
-					
-				System.out.println(aluno);
-				System.out.println(aluno.getDisciplinas());
-				System.out.println("A média é = " + aluno.getMediaNota());
+				System.out.println("Aluno = " + aluno.getNome());
+				System.out.println("Media do aluno = " + aluno.getMediaNota());
 				System.out.println("Resultado = " + aluno.getAlunoAprovado2());
-				System.out.println("-----------------------------------------");
+				System.out.println("===========================================");
+				
+				for (int posd = 0; posd < aluno.getDisciplinas().size(); posd ++) {
+					
+					Disciplina disc = aluno.getDisciplinas().get(posd);
+					System.out.println("Materia = " + disc.getDisciplina() + " - Nota = " + disc.getNota());
+					System.out.println("===========================================");
+				}
 				
 			}
 		
 			}
-				for (Aluno aluno : alunos) {
-					System.out.println("Aluno que sobraram na lista");
-					System.out.println(aluno.getNome());
-					System.out.println("Sua materias são");
-					for (Disciplina disciplina : aluno.getDisciplinas()) {
-						System.out.println(disciplina.getDisciplina());
-					}
-				}
+				
+					
+				
 		}
-	}
+	
 
 			
 		/*=====================================================*/
