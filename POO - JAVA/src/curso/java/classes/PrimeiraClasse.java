@@ -80,13 +80,17 @@ public class PrimeiraClasse {
 		}
 			for (Aluno aluno : alunos ) {
 				
+				if (aluno.getNome().equalsIgnoreCase("Andre")) {
+				
 				System.out.println(aluno);
 				System.out.println(aluno.getDisciplinas());
 				System.out.println("A média é = " + aluno.getMediaNota());
 				System.out.println("Resultado = " + aluno.getAlunoAprovado2());
 				System.out.println("-----------------------------------------");
+				break;
 			}
 		
+			}
 		}
 	}
 
