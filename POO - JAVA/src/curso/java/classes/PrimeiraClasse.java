@@ -14,6 +14,13 @@ public class PrimeiraClasse {
 	
 	public static void main(String[]args) {
 		
+		String login = JOptionPane.showInputDialog("Informe o login");
+		String senha = JOptionPane.showInputDialog("Informe o senha");
+		
+		if (login.equalsIgnoreCase("admin") &&
+			senha.equalsIgnoreCase("admin")) {
+				
+		
 		List<Aluno> alunos = new ArrayList<Aluno>();
 		
 		/*lista que dentro dela temos uma chave que identifica uma sequencia de valores tambem*/
@@ -118,8 +125,8 @@ public class PrimeiraClasse {
 		}
 				
 	}
+	}
 }
-	
 
 			
 		/*=====================================================*/
