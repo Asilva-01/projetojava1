@@ -222,4 +222,14 @@ public class Aluno extends Pessoa {
 		return Objects.equals(nome, other.nome) && Objects.equals(numeroCpf, other.numeroCpf);
 	}
 	
+	@Override /*Identifica método subreescrito*/
+	public boolean pessoaMaiorIdade() {
+		
+		return idade >= 21;
+	}
+	
+	public String msgMaiorIdade() {
+		return this.pessoaMaiorIdade()? "Aluno maior de idade " : "Aluno menor de idade";
+	}
+	
 }
