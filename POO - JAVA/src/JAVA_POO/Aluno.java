@@ -7,15 +7,9 @@ import java.util.Objects;
 import JAVA_POO.constantes.StatusAluno;
 
 /*Está é nossa classe/objeto que representa o Aluno*/
-public class Aluno {
+public class Aluno extends Pessoa {
 	/*Esses são os atributosa do aluno*/
-	private String nome;
-	private int idade;
-	private String dataNascimento;
-	private String registroGeral;
-	private String numeroCpf;
-	private String nomeMae;
-	private String nomePai;
+
 	private String dataMatricula;
 	private String nomeEscola;
 	private String serieMatriculado;
