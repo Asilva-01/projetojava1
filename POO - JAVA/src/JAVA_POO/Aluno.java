@@ -7,7 +7,7 @@ import java.util.Objects;
 import JAVA_POO.constantes.StatusAluno;
 
 /*Está é nossa classe/objeto que representa o Aluno*/
-public class Aluno extends Pessoa {
+ public class Aluno extends Pessoa {
 	/*Esses são os atributosa do aluno*/
 
 	private String dataMatricula;
@@ -26,7 +26,7 @@ public class Aluno extends Pessoa {
 	}
 	
 	
-	public Aluno( ) {/*Cria os dado na memora - Sendo padrão do Java*/
+	public Aluno() {/*Cria os dado na memora - Sendo padrão do Java*/
 
 }
 
@@ -231,5 +231,12 @@ public class Aluno extends Pessoa {
 	public String msgMaiorIdade() {
 		return this.pessoaMaiorIdade()? "Aluno maior de idade " : "Aluno menor de idade";
 	}
+	
+	@Override
+	public double salario() {
+		return 1800.90;
+	}
+	
+	
 	
 }

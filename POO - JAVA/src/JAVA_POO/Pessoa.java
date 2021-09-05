@@ -11,6 +11,12 @@ public class Pessoa {
 	protected String numeroCpf;
 	protected String nomeMae;
 	protected String nomePai;
+	
+	/*Metodo abstrado que ficxa na classe pai é obritório para as classes filhas */
+	public double salario() {
+		return 0;
+	} 
+	
 	public String getNome() {
 		return nome;
 	}
