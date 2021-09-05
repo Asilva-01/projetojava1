@@ -1,5 +1,7 @@
 package JAVA_POO;
 
+/*Herança - s*Classe pai ou classe master o superclasse (Atributos comuns a todos os objetos)*/
+
 public class Pessoa {
 	
 	protected String nome;
