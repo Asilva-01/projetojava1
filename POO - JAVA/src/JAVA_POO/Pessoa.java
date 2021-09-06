@@ -2,7 +2,7 @@ package JAVA_POO;
 
 /*Herança - s*Classe pai ou classe master o superclasse (Atributos comuns a todos os objetos)*/
 
-public class Pessoa {
+public abstract class Pessoa {
 	
 	protected String nome;
 	protected int idade;
@@ -13,9 +13,9 @@ public class Pessoa {
 	protected String nomePai;
 	
 	/*Metodo abstrado que ficxa na classe pai é obritório para as classes filhas */
-	public double salario() {
-		return 0;
-	} 
+	/*public abstract double salario();*/ 
+	public abstract double salario();
+	
 	
 	public String getNome() {
 		return nome;

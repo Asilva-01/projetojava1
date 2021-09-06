@@ -8,6 +8,7 @@ import javax.swing.JOptionPane;
 
 import JAVA_POO.Aluno;
 import JAVA_POO.Disciplina;
+import JAVA_POO.Secretario;
 import JAVA_POO.constantes.StatusAluno;
 
 public class PrimeiraClasse {
@@ -17,9 +18,12 @@ public class PrimeiraClasse {
 		String login = JOptionPane.showInputDialog("Informe o login");
 		String senha = JOptionPane.showInputDialog("Informe o senha");
 		
-		if (login.equalsIgnoreCase("admin") &&
-			senha.equalsIgnoreCase("admin")) {
-				
+		Secretario secretario = new Secretario();
+		secretario.setLogin(login);
+		secretario.setSenha(senha);
+		
+		if(secretario.autenticar()) { /*Se TRUE acesso, se FALSE não acessa*/
+					
 		
 		List<Aluno> alunos = new ArrayList<Aluno>();
 		
@@ -124,7 +128,11 @@ public class PrimeiraClasse {
 				 + aluno.getMediaNota());
 		}
 				
+	}else {
+		JOptionPane.showMessageDialog(null, "Acesso não permitido !");
 	}
+		
+		
 	}
 }
 
