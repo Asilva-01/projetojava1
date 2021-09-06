@@ -14,15 +14,17 @@ import cursojava.interfaces.PermitirAcesso;
 
 public class PrimeiraClasse {
 	
+	private static PermitirAcesso secretario;
+
 	public static void main(String[]args) {
 		
 		String login = JOptionPane.showInputDialog("Informe o login");
 		String senha = JOptionPane.showInputDialog("Informe o senha");
 		
-		PermitirAcesso secretario = new Secretario();
+		PermitirAcesso permitirAcesso = new Secretario(login, senha);
 		
 		
-		if(new Secretario().autenticar(login, senha)) { /*Se TRUE acesso, se FALSE não acessa*/
+		if(permitirAcesso.autenticar()) { /*Se TRUE acesso, se FALSE não acessa*/
 					
 		
 		List<Aluno> alunos = new ArrayList<Aluno>();
