@@ -10,6 +10,7 @@ import JAVA_POO.Aluno;
 import JAVA_POO.Disciplina;
 import JAVA_POO.Secretario;
 import JAVA_POO.constantes.StatusAluno;
+import cursojava.interfaces.PermitirAcesso;
 
 public class PrimeiraClasse {
 	
@@ -18,11 +19,10 @@ public class PrimeiraClasse {
 		String login = JOptionPane.showInputDialog("Informe o login");
 		String senha = JOptionPane.showInputDialog("Informe o senha");
 		
-		Secretario secretario = new Secretario();
-		secretario.setLogin(login);
-		secretario.setSenha(senha);
+		PermitirAcesso secretario = new Secretario();
 		
-		if(secretario.autenticar()) { /*Se TRUE acesso, se FALSE não acessa*/
+		
+		if(new Secretario().autenticar(login, senha)) { /*Se TRUE acesso, se FALSE não acessa*/
 					
 		
 		List<Aluno> alunos = new ArrayList<Aluno>();
