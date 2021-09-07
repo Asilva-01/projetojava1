@@ -7,9 +7,11 @@ import java.util.List;
 import javax.swing.JOptionPane;
 
 import JAVA_POO.Aluno;
+import JAVA_POO.Diretor;
 import JAVA_POO.Disciplina;
 import JAVA_POO.Secretario;
 import JAVA_POO.constantes.StatusAluno;
+import cursojava.classesauxiliares.FuncaoAutenticacao;
 import cursojava.interfaces.PermitirAcesso;
 
 public class PrimeiraClasse {
@@ -21,10 +23,10 @@ public class PrimeiraClasse {
 		String login = JOptionPane.showInputDialog("Informe o login");
 		String senha = JOptionPane.showInputDialog("Informe o senha");
 		
-		PermitirAcesso permitirAcesso = new Secretario(login, senha);
 		
 		
-		if(permitirAcesso.autenticar()) { /*Se TRUE acesso, se FALSE não acessa*/
+		if(new FuncaoAutenticacao(new Diretor(login, senha)).autenticar()) { 
+			/*Trava de acesso somente 100% correto*/
 					
 		
 		List<Aluno> alunos = new ArrayList<Aluno>();
