@@ -164,6 +164,10 @@ public class PrimeiraClasse {
 			JOptionPane.showMessageDialog(null, "Opa um null pointer exeption : " + e.getClass());
 		}catch (Exception e) {
 			e.printStackTrace();
+			
+			
+		}finally { /*Sempre é executado com erros ou não*/
+			JOptionPane.showMessageDialog(null, "Obrigado por aprender JAVA na JDEV Treinamento!");
 		}
 		
 		
