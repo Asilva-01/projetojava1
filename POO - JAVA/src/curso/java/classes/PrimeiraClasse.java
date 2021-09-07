@@ -20,6 +20,8 @@ public class PrimeiraClasse {
 
 	public static void main(String[]args) {
 		
+		try {
+		
 		String login = JOptionPane.showInputDialog("Informe o login");
 		String senha = JOptionPane.showInputDialog("Informe o senha");
 		
@@ -34,15 +36,15 @@ public class PrimeiraClasse {
 		/*lista que dentro dela temos uma chave que identifica uma sequencia de valores tambem*/
 		HashMap<String, List<Aluno>> maps = new HashMap<String, List<Aluno>>();
 		
-		for (int qtd = 1 ; qtd <=5; qtd++) {
+		for (int qtd = 1 ; qtd <=2; qtd++) {
 		
 		
 		/*new Aluno() é uma instancia (Criaçao de Objeto)*/
 		/*aluno1 é uma referencia para o objeto aluno*/
 		
 		String nome = JOptionPane.showInputDialog("Qual o nome do aluno "+qtd+" ?");
-		/*String idade = JOptionPane.showInputDialog("Qual a idade?");
-		String dataNascimento = JOptionPane.showInputDialog("Data de nascimento?");
+		String idade = JOptionPane.showInputDialog("Qual a idade?");
+		/*String dataNascimento = JOptionPane.showInputDialog("Data de nascimento?");
 		String rg = JOptionPane.showInputDialog("Registro Geral?");
 		String cpf = JOptionPane.showInputDialog("Informe o número do CPF");
 		String mae = JOptionPane.showInputDialog("Nome da mãe");
@@ -55,8 +57,8 @@ public class PrimeiraClasse {
 		Aluno aluno1 = new Aluno();/*Aqui será o João*/
 
 		aluno1.setNome(nome);
-		/*aluno1.setIdade(Integer.valueOf(idade));
-		aluno1.setDataNascimento(dataNascimento);
+		aluno1.setIdade(Integer.valueOf(idade));
+		/*aluno1.setDataNascimento(dataNascimento);
 		aluno1.setRegistroGeral(rg);
 		aluno1.setNumeroCpf(cpf);
 		aluno1.setNomeMae(mae);
@@ -135,6 +137,34 @@ public class PrimeiraClasse {
 	}else {
 		JOptionPane.showMessageDialog(null, "Acesso não permitido !");
 	}
+		
+		/*aqui*/
+	
+		} catch (NumberFormatException e) {
+			
+			StringBuilder saida = new StringBuilder();
+			
+			
+			e.printStackTrace();/*Imprime erro no console Java*/
+			/*Mensagem do erro ou caousa*/
+			System.out.println(" Mensagem: " + e.getMessage());
+			
+			for (int pos = 0; pos < e.getStackTrace().length; pos++) {
+				
+				saida.append("\n Classe de erro : " +e.getStackTrace()[pos].getClassName());
+				saida.append("\n Método de erro : " +e.getStackTrace()[pos].getMethodName());
+				saida.append("\n Linha de erro : " +e.getStackTrace()[pos].getLineNumber());
+				saida.append("\n Class : " +e.getClass().getName());
+			}
+			
+			
+			
+			JOptionPane.showMessageDialog(null, "Erro de conversão de numero " + saida.toString());
+		}catch (NullPointerException e) {
+			JOptionPane.showMessageDialog(null, "Opa um null pointer exeption : " + e.getClass());
+		}catch (Exception e) {
+			e.printStackTrace();
+		}
 		
 		
 	}
