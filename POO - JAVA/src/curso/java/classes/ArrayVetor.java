@@ -51,19 +51,20 @@ public class ArrayVetor {
 			if (pos == 0) {
 				notaMax = d.getNota()[pos];
 			}else {
-				if (d.getNota()[pos] > notaMax) {
+				if (d.getNota()[pos] < notaMax) {
 					notaMax = d.getNota()[pos];
 				}
+				
 			}
-						
+		}	
+				
+			System.out.println("A menor nota da Disciplina = " + d.getDisciplina() + " é de valor : " + notaMax);
 		}
-		
-		System.out.println("A maior nota da Disciplina = " + d.getDisciplina() + " é de valor : " + notaMax);
 	}
-		
+			
+
 	}
-	
-}
+
 
 		
 		
