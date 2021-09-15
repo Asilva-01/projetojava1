@@ -6,6 +6,7 @@ public class AulaThread {
 	
 	public static void main(String[] args) throws InterruptedException {
 		
+		/*Thread processando em pararelo envio de e-mail*/
 		new Thread() {
 			
 			public void run() {/*Executa o que nós queremos*/
@@ -31,6 +32,33 @@ public class AulaThread {
 			
 		}.start();/*Inicia a thread que processa em paralelo*/
 		
+		//********************************DIVISÃO DAS THREAD***********************
+		
+		/*Thread processando em pararelo envio de e-mail*/
+		new Thread() {
+			
+			public void run() {/*Executa o que nós queremos*/
+				
+				/*Código da rotina que roda em paralelo*/
+				for (int pos = 0; pos <10; pos++) {
+					
+					
+					
+					/*Quero executar esse envio com tempo determinado*/
+					System.out.println("Executando uma rotina, por exemplo envio de nota fiscal");
+					try {
+						Thread.sleep(4000);
+					} catch (InterruptedException e) {
+			
+						e.printStackTrace();
+					} /*Tempo para execução*/
+				}
+				/*Fim de codigo paralelo*/
+				
+				
+			}
+			
+		}.start();/*Inicia a thread que processa em paralelo*/
 	
 		
 		/*Codigo do sistema do usuário continua o fluxo de trabalho*/
