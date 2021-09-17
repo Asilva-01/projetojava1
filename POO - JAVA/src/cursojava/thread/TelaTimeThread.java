@@ -79,15 +79,29 @@ public class TelaTimeThread  extends JDialog{
 
 		jButton.addActionListener(new ActionListener() {
 			
+			
+				
+			
+			
+			
 			@Override
 			public void actionPerformed(ActionEvent e) {/*Executa o clique no botão*/
 				
+				if (fila == null) {
+					fila = new ImplementacaoFilahread();
+					fila.start();
+				}
+				
+				for (int qtd = 0; qtd < 100; qtd++) {/*Simulando 100 envio em massa*/	
+				
+				
 			ObjetoFilaThread filaThread = new ObjetoFilaThread();
 			filaThread.setNome(mostraTempo.getText());
-			filaThread.setEmail(mostraTempo2.getText());
+			filaThread.setEmail(mostraTempo2.getText() + " - " + qtd);
 			
 			fila.add(filaThread);
-				
+			}
+			
 			}
 		});
 		
@@ -97,7 +111,8 @@ public class TelaTimeThread  extends JDialog{
 			@Override
 			public void actionPerformed(ActionEvent e) {
 
-				
+				fila.stop();
+				fila = null;
 
 			}
 		});
