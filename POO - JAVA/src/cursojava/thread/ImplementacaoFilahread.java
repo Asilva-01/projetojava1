@@ -8,18 +8,29 @@ public class ImplementacaoFilahread extends Thread {
 	private static ConcurrentLinkedQueue<ObjetoFilaThread> pilha_filha =
 			new ConcurrentLinkedQueue<ObjetoFilaThread>();
 	
-	public static void ass(ObjetoFilaThread objetoFilaThread) {
+	public static void add(ObjetoFilaThread objetoFilaThread) {
 		pilha_filha.add(objetoFilaThread);
 	}
+
+
+
+	private Object pilha_fila;
 	
 	
 		
 	@Override
 	public void run() {
-		Iterator iteracao = pilha_filha.iterator();		
 		
-		synchronized (iteracao) { /* Bloquear o acesso a esta lista por outro processo*/
+		System.out.println("Fila rodando");
 			
+		
+		while(true) {
+			
+		
+		
+		synchronized (pilha_filha) { /* Bloquear o acesso a esta lista por outro processo*/
+			
+			Iterator iteracao = pilha_filha.iterator();
 			while(iteracao.hasNext()) {/*Enquanto conter dados na lista irá processar*/
 				
 				/*Pegando objeto atual*/
@@ -36,23 +47,26 @@ public class ImplementacaoFilahread extends Thread {
 				iteracao.remove();
 				
 				try {
-					Thread.sleep(100);/*Dar um tempo pra descarga de memória*/
+					Thread.sleep(1000);/*Dar um tempo pra descarga de memória*/
 				} catch (InterruptedException e) {
 					e.printStackTrace();
 				}
-				
 			}
-			
-			
-		}
-		
-
+			}
 		
 		try {
 			Thread.sleep(1000);/*Processada a lista terá um tempo de limpeza da memória*/
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
+			
+			
+		}
+		
+
+		
+	
 	}	
 	
+
 }
